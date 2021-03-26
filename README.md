@@ -1,6 +1,9 @@
 # NetworkingExample
 Example  project for the series of articles : 
 
+This project required Alamofire via carthage. Use below command.
+`carthage update --use-xcframeworks --platform iOS`
+
 
 [Write a Networking Layer in Swift 4 using Alamofire 5 and Codable Part 1: API Router](https://medium.com/@AladinWay/write-a-networking-layer-in-swift-4-using-alamofire-and-codable-part-1-api-router-349699a47569
 )
