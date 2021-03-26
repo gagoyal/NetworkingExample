@@ -1,74 +1,44 @@
-//
-//  APIRouter.swift
-//  Networking
-//
-//  Created by Alaeddine Messaoudi on 26/11/2017.
-//  Copyright © 2017 Alaeddine Me. All rights reserved.
-//
 
+import Foundation
 import Alamofire
 
-enum APIRouter: URLRequestConvertible {
-    
-    case login(email:String, password:String)
-    case articles
-    case article(id: Int)
-    
-    // MARK: - HTTPMethod
-    private var method: HTTPMethod {
-        switch self {
-        case .login:
-            return .post
-        case .articles, .article:
-            return .get
-        }
+public protocol APIRouter: URLRequestConvertible {
+    var baseURL: String { get }
+    var path: String { get }
+    var method: HTTPMethod { get }
+    var httpHeaders: HTTPHeaders { get }
+    var parameters: [String: Any] { get }
+    var encoding: ParameterEncoding { get }
+}
+
+extension APIRouter {
+    //default base url for app services. Incase some service requires other base url, its router can implement it.
+    var baseURL: String {
+        return K.ProductionServer.baseURL
+    }
+
+    //default headers. if additional are required, service router should merge it.
+    var httpHeaders: HTTPHeaders {
+        return HTTPHeaders.commonHeaders()
     }
     
-    // MARK: - Path
-    private var path: String {
-        switch self {
-        case .login:
-            return "/login"
-        case .articles:
-            return "/articles/all.json"
-        case .article(let id):
-            return "/article/\(id)"
-        }
+    var parameters: [String : Any] {
+        return [:]
     }
     
-    // MARK: - Parameters
-    private var parameters: Parameters? {
-        switch self {
-        case .login(let email, let password):
-            return [K.APIParameterKey.email: email, K.APIParameterKey.password: password]
-        case .articles, .article:
-            return nil
-        }
+    //most commonly ones handled based on method. Router can implement if required.
+    var encoding: ParameterEncoding {
+        return (method == .get) ? URLEncoding.default : JSONEncoding.default
     }
     
-    // MARK: - URLRequestConvertible
+    //protocol requirement.
     func asURLRequest() throws -> URLRequest {
-        let url = try K.ProductionServer.baseURL.asURL()
-        
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        
-        // HTTP Method
-        urlRequest.httpMethod = method.rawValue
-        
-        // Common Headers
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
-        
-        // Parameters
-        if let parameters = parameters {
-            do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
-            } catch {
-                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
-            }
-        }
-        
-        return urlRequest
+        let originalRequest = try URLRequest(url: baseURL.appending(path),
+                                             method: method,
+                                             headers: httpHeaders)
+        let encodedRequest = try encoding.encode(originalRequest,
+                                                 with: parameters)
+        return encodedRequest
     }
 }
 
