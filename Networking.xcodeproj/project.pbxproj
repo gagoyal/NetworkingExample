@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		062A587A2615F1D8002708D5 /* ArticlesApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062A58782615F1D8002708D5 /* ArticlesApiClient.swift */; };
+		062A587B2615F1D8002708D5 /* LoginApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062A58792615F1D8002708D5 /* LoginApiClient.swift */; };
 		06D067E1260E1C90001D8B0D /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D067E0260E1C90001D8B0D /* APIRouter.swift */; };
 		06D067E3260E2910001D8B0D /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D067E2260E2910001D8B0D /* APIConfiguration.swift */; };
 		06DFC795260D13AA001E0E58 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DFC790260D1383001E0E58 /* Alamofire.xcframework */; };
@@ -40,6 +42,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		062A58782615F1D8002708D5 /* ArticlesApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesApiClient.swift; sourceTree = "<group>"; };
+		062A58792615F1D8002708D5 /* LoginApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginApiClient.swift; sourceTree = "<group>"; };
 		06D067E0260E1C90001D8B0D /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		06D067E2260E2910001D8B0D /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		06DFC790260D1383001E0E58 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 				06DFC79C260D200C001E0E58 /* LoginAPIRouter.swift */,
 				7A97FC991FCB346900158615 /* ArticlesAPIRouter.swift */,
 				7AF5A7F11FE314BF0094C173 /* APIClient.swift */,
+				062A58792615F1D8002708D5 /* LoginApiClient.swift */,
+				062A58782615F1D8002708D5 /* ArticlesApiClient.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -246,7 +252,9 @@
 				06D067E1260E1C90001D8B0D /* APIRouter.swift in Sources */,
 				7AF5A7F21FE314BF0094C173 /* APIClient.swift in Sources */,
 				06DFC79D260D200C001E0E58 /* LoginAPIRouter.swift in Sources */,
+				062A587B2615F1D8002708D5 /* LoginApiClient.swift in Sources */,
 				06D067E3260E2910001D8B0D /* APIConfiguration.swift in Sources */,
+				062A587A2615F1D8002708D5 /* ArticlesApiClient.swift in Sources */,
 				7A97FCA11FCB39C000158615 /* Article.swift in Sources */,
 				7A97FC921FCB23FB00158615 /* ArticlesViewController.swift in Sources */,
 				7A97FC9F1FCB369600158615 /* User.swift in Sources */,
