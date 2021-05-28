@@ -11,7 +11,7 @@ import  Foundation
 
 class APIClient {
     @discardableResult
-    internal static func performRequest<T:Decodable>(route:URLRequestConvertible, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T, AFError>)->Void) -> DataRequest {
+    internal func performRequest<T:Decodable>(route:URLRequestConvertible, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T, AFError>)->Void) -> DataRequest {
         return AF.request(route)
                         .responseDecodable (decoder: decoder){ (response: DataResponse<T, AFError>) in
                             completion(response.result)

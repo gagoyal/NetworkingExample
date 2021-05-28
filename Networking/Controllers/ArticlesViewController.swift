@@ -9,31 +9,33 @@
 import UIKit
 
 class ArticlesViewController: UIViewController {
+    var loginViewModel: LoginViewModelProtocol
+    var articlesViewModel: ArticlesViewModelProtocol
+    
+    init(loginVM: LoginViewModelProtocol, articlesVM: ArticlesViewModelProtocol) {
+        self.loginViewModel = loginVM
+        self.articlesViewModel = articlesVM
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        self.loginViewModel = LoginViewModel(apiClient: APIClient())
+        self.articlesViewModel = ArticlesViewModel(apiClient: APIClient())
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .gray
         
         // Test getArticles request
-        APIClient.getArticles{ result in
-            switch result {
-            case .success(let articles):
-                print("___________SUCCESS__________________")
-                print(articles)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+        articlesViewModel.getArticlesFromServer()
 
         // Test Login request
-        APIClient.login(email: "test@gmail.com", password: "myPassword") { result in
-            switch result {
-            case .success(let user):
-                print("___________SUCCESS__________________")
-                print(user)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+        loginViewModel.login(email: "test@gmail.com", password: "myPassword")
     }
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		062A587A2615F1D8002708D5 /* ArticlesApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062A58782615F1D8002708D5 /* ArticlesApiClient.swift */; };
 		062A587B2615F1D8002708D5 /* LoginApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062A58792615F1D8002708D5 /* LoginApiClient.swift */; };
+		067DBF3D266140C8006A8852 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067DBF3C266140C8006A8852 /* LoginViewModel.swift */; };
+		067DBF3F26614A54006A8852 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067DBF3E26614A54006A8852 /* ArticlesViewModel.swift */; };
 		06D067E1260E1C90001D8B0D /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D067E0260E1C90001D8B0D /* APIRouter.swift */; };
 		06D067E3260E2910001D8B0D /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D067E2260E2910001D8B0D /* APIConfiguration.swift */; };
 		06DFC795260D13AA001E0E58 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DFC790260D1383001E0E58 /* Alamofire.xcframework */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		062A58782615F1D8002708D5 /* ArticlesApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesApiClient.swift; sourceTree = "<group>"; };
 		062A58792615F1D8002708D5 /* LoginApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginApiClient.swift; sourceTree = "<group>"; };
+		067DBF3C266140C8006A8852 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		067DBF3E26614A54006A8852 /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
 		06D067E0260E1C90001D8B0D /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		06D067E2260E2910001D8B0D /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		06DFC790260D1383001E0E58 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				7A97FC911FCB23FB00158615 /* ArticlesViewController.swift */,
+				067DBF3C266140C8006A8852 /* LoginViewModel.swift */,
+				067DBF3E26614A54006A8852 /* ArticlesViewModel.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -250,9 +256,11 @@
 				7A97FC9A1FCB346900158615 /* ArticlesAPIRouter.swift in Sources */,
 				7A97FCA31FCB3A6700158615 /* Category.swift in Sources */,
 				06D067E1260E1C90001D8B0D /* APIRouter.swift in Sources */,
+				067DBF3F26614A54006A8852 /* ArticlesViewModel.swift in Sources */,
 				7AF5A7F21FE314BF0094C173 /* APIClient.swift in Sources */,
 				06DFC79D260D200C001E0E58 /* LoginAPIRouter.swift in Sources */,
 				062A587B2615F1D8002708D5 /* LoginApiClient.swift in Sources */,
+				067DBF3D266140C8006A8852 /* LoginViewModel.swift in Sources */,
 				06D067E3260E2910001D8B0D /* APIConfiguration.swift in Sources */,
 				062A587A2615F1D8002708D5 /* ArticlesApiClient.swift in Sources */,
 				7A97FCA11FCB39C000158615 /* Article.swift in Sources */,
