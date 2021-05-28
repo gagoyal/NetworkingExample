@@ -14,6 +14,7 @@ protocol ArticlesViewModelProtocol {
 
 class ArticlesViewModel: ArticlesViewModelProtocol {
     let api: ArticlesApiClientProtocol
+    var articles: [Article]?
     
     init (apiClient: ArticlesApiClientProtocol) {
         self.api = apiClient
@@ -24,6 +25,7 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
             switch result {
             case .success(let articles):
                 print("___________SUCCESS__________________")
+                self.articles = articles
                 print(articles)
             case .failure(let error):
                 print(error.localizedDescription)

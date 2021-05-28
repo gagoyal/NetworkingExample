@@ -1,0 +1,40 @@
+[
+    {
+        "id": 1,
+        "title": "What's new in Swift 4",
+        "image": "http:\/\/example.com\/image.jpg",
+        "author": "Patrick Coombe",
+        "categories": [
+            {
+                "id": 1,
+                "name": "iOS",
+                "parent_id": null
+            },
+            {
+                "id": 2,
+                "name": "Swift",
+                "parent_id": 1
+            }
+        ],
+        "datePublished": "2015-09-20"
+    },
+    {
+        "id": 2,
+        "title": "Core Data in Swift 4",
+        "image": "http:\/\/example.com\/image.jpg",
+        "author": "Patrick Coombe",
+        "categories": [
+            {
+                "id": 1,
+                "name": "iOS",
+                "parent_id": null
+            },
+            {
+                "id": 2,
+                "name": "Swift",
+                "parent_id": 1
+            }
+        ],
+        "datePublished": "2017-01-23"
+    }
+]
